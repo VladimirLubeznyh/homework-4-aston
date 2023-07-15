@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Fragments</string>
+    <string name="fragment_a">FragmentA</string>
+    <string name="fragment_b">Fragment B</string>
+    <string name="fragment_c">Fragment C</string>
+    <string name="fragment_d">Fragment D</string>
+    <string name="a">A</string>
+    <string name="d">D</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <!-- fragment C   -->
+    <string name="hello_fragment_c">Hello fragment C!</string>
 </resources>
