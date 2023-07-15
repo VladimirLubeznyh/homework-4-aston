@@ -13,12 +13,6 @@ class MainActivity : AppCompatActivity(), FragmentNavigation {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add(R.id.container, FragmentA.newInstant(), FRAGMENT_A_TEG)
-            }
-        }
     }
 
     override fun showFragmentA() {
@@ -48,7 +42,7 @@ class MainActivity : AppCompatActivity(), FragmentNavigation {
     private fun launchFragment(fragment: Fragment, teg: String) {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            replace(R.id.container, fragment, teg)
+            replace(R.id.mainContainer, fragment, teg)
             addToBackStack(teg)
         }
     }

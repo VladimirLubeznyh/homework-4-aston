@@ -11,23 +11,23 @@ class FragmentC : Fragment(R.layout.fragment_c) {
     private var _binding: FragmentCBinding? = null
     private val binding get() = _binding!!
 
-    private var strArg: String = DEFAULT_STRING
+    private var textHello: String = UNKNOWN_STRING
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        strArg = arguments?.getString(STRING_EXTRA) ?: DEFAULT_STRING
+        textHello = arguments?.getString(STRING_EXTRA) ?: UNKNOWN_STRING
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentCBinding.bind(view)
-        binding.tvString.text = strArg
-
-        binding.btShowFragmentD.setOnClickListener {
-            fragmentNav()?.showFragmentD()
-        }
-
-        binding.btShowFragmentA.setOnClickListener {
-            fragmentNav()?.showFragmentA()
+        with(binding) {
+            tvString.text = textHello
+            btShowFragmentD.setOnClickListener {
+                fragmentNav()?.showFragmentD()
+            }
+            btShowFragmentA.setOnClickListener {
+                fragmentNav()?.showFragmentA()
+            }
         }
     }
 
@@ -40,7 +40,7 @@ class FragmentC : Fragment(R.layout.fragment_c) {
 
         const val FRAGMENT_C_TEG = "FRAGMENT_C_TEG"
         private const val STRING_EXTRA = "STRING_EXTRA"
-        private const val DEFAULT_STRING = "unknown"
+        private const val UNKNOWN_STRING = "unknown"
 
         @JvmStatic
         fun newInstant(text: String): FragmentC = FragmentC().apply {

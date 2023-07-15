@@ -8,4 +8,6 @@
     <string name="d">D</string>
     <string name="b">B</string>
     <string name="c">C</string>
+    <!-- fragment C   -->
+    <string name="hello_fragment_c">Hello fragment C!</string>
 </resources>

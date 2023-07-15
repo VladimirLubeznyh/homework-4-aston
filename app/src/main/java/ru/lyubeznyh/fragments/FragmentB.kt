@@ -6,17 +6,19 @@ import androidx.fragment.app.Fragment
 import ru.lyubeznyh.fragments.databinding.FragmentBBinding
 
 class FragmentB : Fragment(R.layout.fragment_b) {
+
     private var _binding: FragmentBBinding? = null
     private val binding get() = _binding!!
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentBBinding.bind(view)
-
-        binding.btShowFragmentC.setOnClickListener {
-            fragmentNav()?.showFragmentC("Hello fragment C")
-        }
-        binding.btShowFragmentA.setOnClickListener {
-            fragmentNav()?.showFragmentA()
+        with(binding) {
+            btShowFragmentC.setOnClickListener {
+                fragmentNav()?.showFragmentC(getString(R.string.hello_fragment_c))
+            }
+            btShowFragmentA.setOnClickListener {
+                fragmentNav()?.showFragmentA()
+            }
         }
     }
 
