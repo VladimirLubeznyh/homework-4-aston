@@ -72,6 +72,7 @@ class SettingPersonFragment : Fragment(R.layout.fragment_setting_person) {
     }
 
     companion object {
+
         const val SETTING_PERSON_FRAGMENT_TEG = "SETTING_PERSON_FRAGMENT_TEG"
         private const val PERSON_EXTRA = "PERSON_EXTRA"
 
